@@ -9,18 +9,15 @@ title: Wishlist
 ### {{ wishes[0] | capitalize }} ###
 {% for w in wishes[1] %}
 {% assign price = w.price | to_integer %}
-{{ price }}
-{{ w.price }}
-{% case price %}
-  {% when <= 50 %}
-    {% assign price_class = "btn btn-block btn-sm btn-success" %}
-  {% when <= 125 %}
-    {% assign price_class = "btn btn-block btn-sm btn-warning" %}
-  {% when > 125 %}
-    {% assign price_class = "btn btn-block btn-sm btn-danger" %}
-  {% else %}
-    {% assign price_class = "btn btn-block btn-sm btn-default" %}
-{% endcase %}
+{% if price <= 50 %}
+  {% assign price_class = "btn btn-block btn-xs btn-success" %}
+{% elsif price <= 125 %}
+  {% assign price_class = "btn btn-block btn-xs btn-warning" %}
+{% elsif price > 125 %}
+  {% assign price_class = "btn btn-block btn-xs btn-danger" %}
+{% else %}
+  {% assign price_class = "btn btn-block btn-xs btn-default" %}
+{% endif %}
 <div class="tile" markdown="1">
 #### {{ w.title | smartify }} {% if w.price %}<span class="{{ price_class }}" style="white-space:nowrap">**${{ w.price }}**</span>{% endif %} ####
 
