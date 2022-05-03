@@ -5,9 +5,10 @@ title: Wishlist
 * TOC
 {:toc}
 
-{% for wishes in site.data.wishes %}
-### {{ wishes[0] | capitalize }} ###
-{% for w in wishes[1] %}
+{% for wishes_map in site.data.wishes %}
+### {{ wishes_map[0] | capitalize }} ###
+{% assign wishes = wishes_map[1] | sort: "price" %}
+{% for w in wishes %}
 {% assign price = w.price | to_integer %}
 {% if price <= 50 %}
   {% assign price_class = "btn btn-block btn-xs btn-success" %}

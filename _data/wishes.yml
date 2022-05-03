@@ -1,9 +1,18 @@
 house:
+  - title: Thing Two
+    image: xyzurl
+    link: abc.com
+    price: 250
+    description:
   - title: Thing One
     image: xyzurl
     link: abc.com
     price: 123
     description:
+  - title: Thing Three
+    image: xyzurl
+    link: abc.com
+    price: 99
 hobby:
   - title: Thing One
     image: xyzurl
