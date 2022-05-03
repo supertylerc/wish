@@ -9,6 +9,8 @@ title: Wishlist
 ### {{ wishes[0] | capitalize }} ###
 {% for w in wishes[1] %}
 {% assign price = w.price | to_integer %}
+{{ price }}
+{{ w.price }}
 {% case price %}
   {% when <= 50 %}
     {% assign price_class = "btn btn-block btn-sm btn-success" %}
